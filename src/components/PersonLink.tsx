@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Person } from '..//types/Person';
 
 interface Props {
@@ -6,6 +6,8 @@ interface Props {
 }
 
 export const PersonLink: React.FC<Props> = ({ person }) => {
+  const location = useLocation();
+
   return (
     <Link
       to={`/people/${person.slug}${location.search}`}
